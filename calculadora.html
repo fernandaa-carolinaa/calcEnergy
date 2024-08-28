@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo de Energia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Custo de Energia</h1>
+        
+        <!-- Seção de bandeiras -->
+        <div class="flags">
+            <div id="flag-green" class="flag"></div>
+            <div id="flag-yellow" class="flag"></div>
+            <div id="flag-red" class="flag"></div>
+            <div id="flag-dark-red" class="flag"></div>
+        </div>
+        <label for="bandeira">Bandeira Tarifária:</label>
+<select id="bandeira" name="bandeira">
+    <option value="verde">Verde</option>
+    <option value="amarela">Amarela</option>
+    <option value="vermelha1">Vermelha Nível 1</option>
+    <option value="vermelha2">Vermelha Nível 2</option>
+</select>
+
+
+        <form id="energyForm">
+            <label for="comodo">Cômodo:</label>
+            <select id="comodo" name="comodo">
+                <option value="">Selecione o cômodo</option>
+                <option value="Sala">Sala</option>
+                <option value="Cozinha">Cozinha</option>
+                <option value="Quarto">Quarto</option>
+                <option value="Banheiro">Banheiro</option>
+                <option value="Lavanderia">Lavanderia</option>
+                <option value="Garagem">Garagem</option>
+                <option value="Escritório">Escritório</option>
+            </select>
+
+            <label for="descricao">Descrição (Equipamento):</label>
+            <select id="descricao" name="descricao">
+                <!-- Opções serão preenchidas dinamicamente -->
+            </select>
+
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" placeholder="Ex: 1" required>
+
+            <label for="horas">Tempo de uso (horas/dia):</label>
+            <input type="number" id="horas" placeholder="Ex: 6" required>
+
+            <label for="potencia">Potência (Watts):</label>
+            <input type="number" id="potencia" placeholder="Ex: 100" required>
+
+            <button type="button" onclick="calculateCost()">Calcular</button>
+        </form>
+
+        <table id="costTable">
+            <thead>
+                <tr>
+                    <th>Cômodo</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Uso diário</th>
+                    <th>KWh/Mês</th>
+                    <th>Custo/Mês (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas serão adicionadas aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
